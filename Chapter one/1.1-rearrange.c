@@ -36,8 +36,10 @@ int main(void)
 
     /***
      * 读取、处理和打印剩余的输入行
+     * 新版本的gcc不支持gets了，改用fgets了
      */
-    while (gets(input) != NULL)
+    // while (gets(input) != NULL)
+    while (fgets(input, sizeof(input), stdin) != NULL)
     {
         printf("Original inout : %s\n", input);
         rearrange(output, input, n_columns, columns);
